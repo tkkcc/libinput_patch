@@ -1,5 +1,6 @@
 # libinput wheel scroll patch
 This patch multiple `discrete deltaY` with `/tmp/libinput_discrete_deltay_multiplier`
+
 The goal is to increase **wheel scroll deltaY** perfectly in apps like chrome
 
 ## Usage
@@ -37,20 +38,12 @@ i3.main()
 
 ## Install
 
-```sh
-yay -S libinput_multiplier
-```
+aur `yay -S libinput-multiplier`
 
-[official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html)
+or [official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html)
 
 ##  Workaround before
 
 [SmoothScroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj)
 
 [imwheel](http://imwheel.sourceforge.net/)
-
-
-
-
-
-
