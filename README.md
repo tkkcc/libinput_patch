@@ -20,7 +20,7 @@ for i3, need python3, [i3ipc](https://github.com/acrisci/i3ipc-python)
 ```python
 #!/usr/bin/env python
 import i3ipc, re, mmap
-r = re.compile(r'chrom|telegram|Master PDF Editor|^code$|typora',re.I)
+r = re.compile(r'chrom|telegram|Master PDF Editor|typora',re.I)
 fd = open("/tmp/libinput_discrete_deltay_multiplier","r+b")
 m = mmap.mmap(fd.fileno(), 0, access=mmap.ACCESS_WRITE)
 def on_window_focus(i3, e):
