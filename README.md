@@ -8,7 +8,7 @@ The goal is to increase **wheel scroll deltaY** perfectly in apps like chrome
 ```sh
 echo 6 > /tmp/libinput_discrete_deltay_multiplier
 ```
-> Everything ok in chrome
+> Scroll in chrome devtool may over one page, everything else ok
 >
 > Scroll too fast in urxvt
 >
@@ -18,7 +18,7 @@ echo 6 > /tmp/libinput_discrete_deltay_multiplier
 
 for i3, need python3, [i3ipc](https://github.com/acrisci/i3ipc-python)
 ```python
-#!/usr/bin/env python
+#!/bin/python
 import i3ipc, re, mmap
 r = re.compile(r'chrom|telegram|Master PDF Editor|typora',re.I)
 fd = open("/tmp/libinput_discrete_deltay_multiplier","r+b")
