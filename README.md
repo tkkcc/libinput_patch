@@ -1,22 +1,21 @@
 # libinput wheel scroll patch
-This patch multiple `discrete deltaY` with `/tmp/libinput_discrete_deltay_multiplier`
+This patch multiple `discrete deltaY` with `/tmp/libinput_discrete_deltay_multiplier`.
+The goal is to increase **wheel scroll deltaY** perfectly in apps like chromium
 
-The goal is to increase **wheel scroll deltaY** perfectly in apps like chrome
+## Install
+
+aur [libinput-multiplier](https://aur.archlinux.org/packages/libinput-multiplier) or [official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html)
 
 ## Usage
 ### write directly
 ```sh
 echo 6 > /tmp/libinput_discrete_deltay_multiplier
 ```
-> Scroll in chrome devtool may over one page, everything else ok
->
-> Scroll too fast in urxvt
->
-> Scroll jumps in ranger, telegram img gallery
+> perfect in chromium, too fast in urxvt, jumps in ranger and telegram img gallery
 
 ### change with focused window
 
-for i3, need python3, [i3ipc](https://github.com/acrisci/i3ipc-python)
+for i3wm, need python3 and [i3ipc](https://github.com/acrisci/i3ipc-python)
 ```python
 #!/bin/python
 import i3ipc, re, mmap
@@ -36,14 +35,8 @@ i3.on("window::focus", on_window_focus)
 i3.main()
 ```
 
-## Install
-
-aur `yay -S libinput-multiplier`
-
-or [official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html)
-
 ##  Workaround before
 
-[SmoothScroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj)
+[SmoothScroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj), find and cache scrollable container, not work in some areas
 
-[imwheel](http://imwheel.sourceforge.net/)
+[imwheel](http://imwheel.sourceforge.net/), one scroll jumps twice in page, forth in tab
