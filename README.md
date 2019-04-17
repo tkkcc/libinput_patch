@@ -7,6 +7,13 @@ The goal is to increase **wheel scroll deltaY** perfectly in apps like chromium
 aur [libinput-multiplier](https://aur.archlinux.org/packages/libinput-multiplier) or [official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html)
 
 ## Usage
+
+### set permission
+```sh
+chmod 666 /tmp/libinput_discrete_deltay_multiplier
+stat -c '%a' /tmp/libinput_discrete_deltay_multiplier
+```
+without right permission, multiplier is always 1  
 ### write directly
 ```sh
 echo 6 > /tmp/libinput_discrete_deltay_multiplier
