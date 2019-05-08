@@ -40,4 +40,4 @@ i3.main()
 
 [SmoothScroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj), find and cache scrollable container, not work in some areas
 
-[imwheel](http://imwheel.sourceforge.net/), one scroll jumps twice in page, forth in tab
+[imwheel](http://imwheel.sourceforge.net/), one scroll jumps twice in page, 4 times in tab
