@@ -1,6 +1,5 @@
 # libinput wheel scroll patch
-This patch multiple `discrete deltaY` with `/tmp/libinput_discrete_deltay_multiplier`.
-The goal is to increase **wheel scroll deltaY** perfectly in apps like chromium
+let `deltaY` x `/tmp/libinput_discrete_deltay_multiplier` to increase **wheel scroll distance**
 
 ## Install
 
