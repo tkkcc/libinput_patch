@@ -35,6 +35,10 @@ i3.on("window::focus", on_window_focus)
 i3.main()
 ```
 
+### Issues
+
+scroll on tensorboard graph not well, try [roughscroll](https://greasyfork.org/en/scripts/36257-roughscroll)
+
 ##  Workaround before
 
 [SmoothScroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj), find and cache scrollable container, not work in some areas
