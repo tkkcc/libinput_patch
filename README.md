@@ -35,9 +35,9 @@ i3.on("window::focus", on_window_focus)
 i3.main()
 ```
 
-### Issues
+## Issues
 
-scroll on tensorboard graph not well, try [roughscroll](https://greasyfork.org/en/scripts/36257-roughscroll)
+scroll on tensorboard(<1.15.0) graph not well, try [roughscroll](https://greasyfork.org/en/scripts/36257-roughscroll)
 
 ##  Workaround before
 
