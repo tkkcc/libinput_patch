@@ -1,4 +1,5 @@
 # libinput wheel scroll patch
+
 let `deltaY` x `/tmp/libinput_discrete_deltay_multiplier` to increase **wheel scroll distance**
 
 ## Install
@@ -37,10 +38,9 @@ i3.main()
 
 ## Issues
 
-scroll on tensorboard(<1.15.0) graph not well, try [roughscroll](https://greasyfork.org/en/scripts/36257-roughscroll)
+1. scroll on tensorboard(<1.15.0) graph not well, try [roughscroll](https://greasyfork.org/en/scripts/36257-roughscroll)
+2. need to manually remove `/tmp/libinput_discrete_deltay_multiplier` when switching X graphics driver from intel to nvidia
 
 ##  Workaround before
 
-[SmoothScroll](https://chrome.google.com/webstore/detail/smoothscroll/nbokbjkabcmbfdlbddjidfmibcpneigj), find and cache scrollable container, not work in some areas
-
-[imwheel](http://imwheel.sourceforge.net/), one scroll jumps twice in page, 4 times in tab
+see [Chromium_low_scroll_speed](https://wiki.archlinux.org/index.php/Chromium#Chromium_low_scroll_speed)
