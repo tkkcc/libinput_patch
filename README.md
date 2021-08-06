@@ -4,7 +4,27 @@ let `deltaY` x `/tmp/libinput_discrete_deltay_multiplier` to increase **wheel sc
 
 ## Install
 
-aur [libinput-multiplier](https://aur.archlinux.org/packages/libinput-multiplier) or [official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html)
+aur [libinput-multiplier](https://aur.archlinux.org/packages/libinput-multiplier) or [official build doc](https://wayland.freedesktop.org/libinput/doc/latest/building.html),
+and for ubuntu 16.04 especially
+```sh
+brew install meson ninja # system's meson 0.29.0 fail
+sudo apt install -y git gcc g++ pkg-config check libmtdev-dev libudev-dev libevdev-dev libwacom-dev xserver-xorg-input-libinput
+
+v=1.16.5 # if you don't use tablet, higher version is ok by appending "-D libwacom=false" to meson
+wget https://www.freedesktop.org/software/libinput/libinput-$v.tar.xz
+tar xf libinput-$v.tar.xz
+cd libinput-$v
+wget https://raw.githubusercontent.com/tkkcc/libinput_patch/ubuntu/multiplier.patch
+patch -Np1 -i multiplier.patch
+ 
+ln -s /usr/bin/pkg-config /some/path/prior/to/brew # use system's pkg-config instead of brew's
+meson --prefix=/usr build/ \
+        -D tests=false \
+        -D documentation=false \
+        -D debug-gui=false
+ninja -C build/
+sudo ninja -C build/ install
+```
 
 ## Usage
 
