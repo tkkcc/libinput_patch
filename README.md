@@ -58,6 +58,26 @@ i3.on("window::focus", on_window_focus)
 i3.main()
 ```
 
+for sway, you should stick with official libinput, and use builtin `scale_factor` option.
+
+```python
+#!/usr/bin/env python
+import i3ipc, re
+r = re.compile(r'chrom|telegram|Master PDF Editor|typora',re.I)
+def on_window_focus(i3, e):
+    c = e.container.app_id
+    if not c:
+        return
+    v = 1
+    if r.search(c):
+        v = 6
+    i3.command(f"input type:pointer scroll_factor {v}")
+
+i3 = i3ipc.Connection()
+i3.on("window::focus", on_window_focus)
+i3.main()
+```
+
 ## Issues
 
 1. scroll on tensorboard(<1.15.0) graph not well, try [roughscroll](https://greasyfork.org/en/scripts/36257-roughscroll)
